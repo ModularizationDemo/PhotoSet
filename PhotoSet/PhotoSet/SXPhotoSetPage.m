@@ -8,7 +8,7 @@
 
 #import "SXPhotoSetViewModel.h"
 #import "SXPhotoSetPage.h"
-#import <Reply-Category/Lothar+Reply.h>
+#import "Lothar+Reply.h"
 #import <Tools/UIView+Frame.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 
@@ -82,7 +82,10 @@
 }
 
 - (IBAction)replyClick {
-    UIViewController *replyVC = [[Lothar shared] Reply_aViewController:SXReplyFromPhotoset photoSetId:self.photoSet.postid docid:self.docid boardId:self.boardid];
+    UIViewController *replyVC = [[Lothar shared] Reply_aViewController:SXReplyFromPhotoset
+                                                            photoSetId:self.photoSet.postid
+                                                                 docid:self.docid
+                                                               boardId:self.boardid];
     [self.navigationController pushViewController:replyVC animated:YES];
 }
 
